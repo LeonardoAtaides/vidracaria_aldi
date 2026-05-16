@@ -75,7 +75,7 @@ export default function AboutSection() {
           <div className="w-full max-w-md mx-auto md:max-w-full aspect-square rounded-2xl bg-white p-4 ">
             <div className="relative w-full h-full overflow-hidden rounded-xl">
               <Image
-                src="/assets/carousel-4.jpg"
+                src="/assets/carousel/carousel-4.jpg"
                 alt="Projeto de arquitetura em vidro"
                 fill
                 className="object-cover"

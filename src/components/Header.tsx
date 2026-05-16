@@ -3,10 +3,14 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const isCatalog = pathname === "/catalog";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -28,14 +32,16 @@ const Header = () => {
           : "bg-[var(--bgheader)]/80 backdrop-blur-sm"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between px-4 py-3">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center font-display font-bold text-white text-xl transition-all duration-300 bg-[#259364] hover:shadow-[0_0_20px_hsl(152_60%_36%_/_0.3),0_0_40px_hsl(152_60%_36%_/_0.1)] group-hover:scale-105">
-            A
-          </div>
-          <span className="text-xl font-bold text-white tracking-wide">
-            Aldi <span className="text-[#25935F]">Vidros</span>
-          </span>
+      <div className="container mx-auto flex items-center justify-between px-4 py-1">
+        <Link href="/" className="flex items-center gap-2 group">
+          <Image
+            src="/assets/Logo Aldi.png"
+            alt="Aldi Vidros"
+            width={80}
+            height={80}
+            className="transition-all duration-300 group-hover:scale-105 drop-shadow-[0_0_4px_#25935F]"
+            style={{ mixBlendMode: "screen" }}
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -50,11 +56,11 @@ const Header = () => {
             </a>
           ))}
           <Link
-            href="/catalog"
+            href={isCatalog ? "/" : "/catalog"}
             rel="noopener noreferrer"
             className="ml-2 px-5 py-2 rounded-lg text-sm font-semibold bg-[#25935F] text-white transition-all duration-300 ease-in-out hover:-translate-y-[2px] hover:shadow-[0_0_25px_hsl(152_60%_36%_/_0.4),0_0_50px_hsl(152_60%_36%_/_0.15)]"
           >
-            Nosso Catálogo
+            {isCatalog ? "Menu Principal" : "Nosso Catálogo"}
           </Link>
         </nav>
 
@@ -81,11 +87,11 @@ const Header = () => {
             </a>
           ))}
           <Link
-            href="/catalog"
+            href={isCatalog ? "/" : "/catalog"}
             rel="noopener noreferrer"
             className="block px-4 py-3 rounded-lg text-center font-semibold bg-[#25935F] text-white transition-all duration-300 ease-in-out hover:-translate-y-[2px] hover:shadow-[0_0_25px_hsl(152_60%_36%_/_0.4),0_0_50px_hsl(152_60%_36%_/_0.15)]"
           >
-            Nosso Catálogo
+            {isCatalog ? "Menu Principal" : "Nosso Catálogo"}
           </Link>
         </nav>
       )}

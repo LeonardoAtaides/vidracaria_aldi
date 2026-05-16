@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Award, Clock, Palette, Handshake } from "lucide-react";
 
 const differentials = [
-  { icon: Award, title: "Qualidade de Serviço", desc: "Utilizamos materiais de primeira linha e equipe altamente capacitada." },
+  { icon: Award, title: "Qualidade de Serviço", desc: "Utilizamos materiais de primeira linha e uma equipe altamente capacitada." },
   { icon: Clock, title: "Durabilidade", desc: "Produtos com garantia de longa vida útil e resistência superior." },
   { icon: Palette, title: "Versatilidade", desc: "Soluções para todos os ambientes e estilos arquitetônicos." },
   { icon: Handshake, title: "Compromisso", desc: "Cumprimos prazos e entregamos exatamente o que foi combinado." },

@@ -4,11 +4,11 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 
 const slides = [
-  { image:"/assets/carousel-1.jpg", title: "Instalação de Box Moderno", desc: "Elegância e segurança para seu banheiro" },
-  { image:"/assets/carousel-2.jpg", title: "Fachadas em Blindex", desc: "Sofisticação e resistência para seu negócio" },
-  { image:"/assets/carousel-3.jpg", title: "Espelhos Decorativos", desc: "Amplitude e estilo para seus ambientes" },
-  { image:"/assets/carousel-4.jpg", title: "Guarda Corpo em Vidro", desc: "Proteção com design moderno" },
-  { image:"/assets/carousel-5.jpg", title: "Projetos Personalizados", desc: "Soluções em vidro sob medida" },
+  { image:"/assets/carousel/carousel-1.jpg", title: "Instalação de Box Moderno", desc: "Elegância e segurança para seu banheiro" },
+  { image:"/assets/carousel/carousel-2.jpg", title: "Fachadas em Blindex", desc: "Sofisticação e resistência para seu negócio" },
+  { image:"/assets/carousel/carousel-3.jpg", title: "Espelhos Decorativos", desc: "Amplitude e estilo para seus ambientes" },
+  { image:"/assets/carousel/carousel-4.jpg", title: "Guarda Corpo em Vidro", desc: "Proteção com design moderno" },
+  { image:"/assets/carousel/carousel-5.jpg", title: "Projetos Personalizados", desc: "Soluções em vidro sob medida" },
 ];
 
 const HeroCarousel = () => {

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -18,6 +18,13 @@ const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedMaterials, setSelectedMaterials] = useState<string[]>([]);
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
+
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    if (hash && categories.some((c) => c.id === hash)) {
+      setActiveCategory(hash);
+    }
+  }, []);
 
   const toggleMaterial = (m: string) =>
     setSelectedMaterials((prev) =>
@@ -58,11 +65,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-        <Header />
+      <Header />
       <HeroSection />
 
       {/* Catalog Section */}
-      <section id="catalogo" className="container px-4 mx-auto">
+      <section id="catalogo" className="container px-4 mx-auto pb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -129,10 +136,9 @@ const Index = () => {
         )}
       </section>
 
-     <Footer />
-     <WhatsAppButton />
+      <Footer />
+      <WhatsAppButton />
 
-      {/* Product Modal */}
       <ProductModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />
     </div>
   );

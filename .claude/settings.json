@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rtk ls *)",
+      "PowerShell(Get-ChildItem -Recurse \"c:\\\\Users\\\\dhiog\\\\Documents\\\\GitHub\\\\vidracaria_aldi\\\\public\\\\assets\" | ForEach-Object { $_.FullName })",
+      "PowerShell(Get-ChildItem -Recurse \"c:\\\\Users\\\\dhiog\\\\Documents\\\\GitHub\\\\vidracaria_aldi\\\\public\\\\assets\" | Where-Object { !$_.PSIsContainer } | ForEach-Object { $_.FullName })",
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\dhiog\\\\Documents\\\\GitHub\\\\vidracaria_aldi\\\\public\\\\assets\" | ForEach-Object { $_.Name })",
+      "PowerShell(Rename-Item \"c:\\\\Users\\\\dhiog\\\\Documents\\\\GitHub\\\\vidracaria_aldi\\\\public\\\\assets\\\\logo aldi sem bg.png\" \"Logo Aldi.png\")"
+    ]
+  }
+}
